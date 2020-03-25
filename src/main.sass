@@ -1,0 +1,299 @@
+$border-color: rgba(0,0,0,.1)
+$darker-txt-color: rgba(0,0,0,.7)
+$shadow: -3px 3px 5px rgba(0,0,0,.1)
+$height: calc(100% - 75px)
+$main-color: #4ab883
+$main-text-color: rgba(0,0,0, .6)
+
+*
+    -webkit-overflow-scrolling: touch
+    ::-webkit-scrollbar
+        display: none
+
+html, body
+    height: 100%
+    scroll-behavior: smooth
+    padding: 0
+    margin: 0
+
+a 
+    color: inherit
+    text-decoration: none
+    &:active
+        background-color: transparent
+
+#root
+    width: 100vw
+    height: 100%
+    max-width: 600px
+    margin: auto
+    overflow: hidden
+    
+.App
+    width: 99% // 邊線會被吃掉 ？？？？？
+    height: 100%
+    position: relative
+    margin: auto
+    font-family: 微軟正黑體
+    letter-spacing: 1px
+    border: solid 1px $border-color
+    color: $darker-txt-color
+
+.container
+    width: 100%
+    height: 100%
+    position: relative
+
+.logo-row
+    width: 100%
+    border-bottom: solid 1px $border-color
+    box-shadow: $shadow
+    position: absolute
+    background-color: #fff
+    z-index: 10
+
+.logo
+    text-align: center
+    height: 50px
+    line-height: 50px
+    font-size: 18px
+    font-weight: 600
+
+.fx
+    display: flex
+
+.bottom-menu-row
+    width: 100%
+    height: 65px
+    position: absolute
+    bottom: 0
+    border-top: solid 1px $border-color
+    box-sizing: border-box
+    padding: 10px 0
+
+.bottom-menu-row .item
+    flex: 1
+    text-align: center
+    position: relative
+    font-size: 12px
+    color: $darker-txt-color
+    .color-red
+        color: $main-color
+    .icon-block
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        font-weight: 700
+    .item-txt
+        font-size: 12px
+
+.daily-tip
+    text-align: left
+    width: 70%
+    margin: auto
+    margin-top: 50px
+    border: solid 1px $border-color
+    padding: 8px 35px
+    box-shadow: $shadow
+    font-size: 16px
+    font-weight: 300
+    border-radius: 3px
+    .throw-question
+        font-size: 18px
+        font-weight: 600
+
+.daily-greeting
+    width: 100%
+    text-align: left
+    margin-bottom: 20px
+    padding: 0 16px
+    .name-call
+        font-size: 18px 
+        font-weight: 600
+    .general-greeting
+        font-size: 16px
+        font-weight: 300
+
+.search-block
+    margin: auto
+    width: 100%
+    position: relative
+    .input-block
+        width: 100%
+        position: relative
+    .item-search-input
+        width: 100%
+        border: solid 1px $border-color
+        height: 30px
+        padding: 0 15px
+        letter-spacing: 1px
+        border-radius: 3px
+        font-size: 16px
+    .log-in-tip
+        font-size: 10px
+        // position: absolute
+        right: 0
+        margin-top: 10px
+        text-align: right
+    .input-row
+        display: flex
+        align-items: center
+        box-shadow: $shadow
+
+.inside-container
+    margin-top: 60px
+    position: absolute
+    height: calc(100% - 125px)
+    width: 100%
+
+.home-hot-item-row
+    position: absolute
+    bottom: 20px
+    width: 100%
+    padding: 10px 0    
+    
+.home-hot-item
+    height: 100%
+    width: 100%
+    box-sizing: border-box
+    overflow: scroll
+    .item-block
+        margin: 0 15px
+        border: solid 1px $border-color
+        box-sizing: border-box
+        border-radius: 10px
+        box-shadow: $shadow
+        img 
+            width: 100px
+            height: 100px
+            border-bottom: solid 1px $border-color
+        .item-name
+            height: 30px
+            line-height: 30px
+            text-align: center
+            margin-top: -4px
+
+.greeting-search-block
+    position: absolute
+    top: 45%
+    left: 50%
+    transform: translate(-50%, -50%)
+    width: 80%
+
+/////    ItemCategory.js    /////
+.item-category
+    height: 100%
+    width: 100%
+    .item-block
+        margin: 0 15px
+        border: solid 1px $border-color
+        box-sizing: border-box
+        border-radius: 10px
+        box-shadow: $shadow
+    .img-block
+        width: 100%
+        height: 180px
+        position: relative
+        border-bottom: solid 1px $border-color
+        img 
+            max-height: 180px
+            max-width: 100%
+            position: absolute
+            top: 50%
+            left: 50%
+            transform: translate(-50%, -50%)
+    .item-name
+        text-align: center
+        padding: 8px 15px
+
+/////     AllCategory.js /////
+.category
+    width: 100%
+    height: $height
+    overflow: scroll
+    .container
+        margin: auto
+        width: 80%
+        margin-top: 80px
+    .item
+        margin-top: 20px
+        width: 100%
+    .search-block
+        width: 100%
+        margin-top: 20px
+    .category-block
+        margin-top: 20px
+        display: flex
+        justify-content: space-around
+        flex-wrap: wrap
+
+.dry-food-page
+    width: 100%
+    overflow: scroll
+    height: $height
+
+.category-header-component
+    width: 100%
+    position: relative
+    .img-block
+        display: flex
+        flex: 1
+        padding: 20px 20px 0 20px
+        box-sizing: border-box
+    .img
+        width: 50%
+        flex: 8
+    .help-txt
+        right: 20px
+        font-size: 14px
+        color: $main-text-color
+        font-weight: 400
+        text-align: right
+        padding: 10px 20px
+
+.back-all-category
+    position: absolute
+    top: 50%
+    transform: translateY(-50%)
+    left: 25px
+    font-size: 18px
+
+.item-filter
+    display: flex
+    justify-content: space-around
+    flex: 1
+    padding: 10px 15px
+    border-bottom: solid 1px $border-color
+    .item
+        text-align: center
+        flex: 1
+
+.item-thumbnail-block
+    width: 100%
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-around
+    margin: 20px 0 50px 0
+    .item-block
+        width: 40%
+        // height: 200px
+        margin-bottom: 15px
+        border: solid 1px $border-color
+    .img-block
+        width: 100%
+        height: 180px
+        position: relative
+        border-bottom: solid 1px $border-color
+    .img
+        max-height: 180px
+        max-width: 100%
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+    .item-name
+        margin-top: -4px
+        text-align: center
+        height: 20px
+        padding: 8px 12px
