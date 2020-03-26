@@ -6,19 +6,19 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 
 function LogoRow(props){
-    console.log(props.showPrePage)
     let preIcon;
     if(props.showPrePage === true){
-        preIcon = <Link to='/CategorySelect' className='back-all-category'>
-        <div><LeftOutlined /></div>
-    </Link>            
-
+        preIcon = (
+            <Link to='/CategorySelect' className='back-all-category'>
+                <div><LeftOutlined /></div>
+            </Link>
+        )            
     } 
      
     return (
-        <div className='logo-row'>
+        <div className='LogoRow-logo-row'>
             { preIcon }
-            <div className='logo'>RHUA</div>
+            <div className='LogoRow-logo'>RHUA</div>
         </div>
     )
 }

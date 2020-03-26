@@ -15,6 +15,7 @@ html, body
     scroll-behavior: smooth
     padding: 0
     margin: 0
+    background-color: #eee
 
 a 
     color: inherit
@@ -25,44 +26,48 @@ a
 #root
     width: 100vw
     height: 100%
+    background-color: #fff
     max-width: 600px
     margin: auto
     overflow: hidden
+    font-size: 15px
+    font-family: 微軟正黑體
+    font-wieght: 500
+    letter-spacing: 1px
     
 .App
-    width: 99% // 邊線會被吃掉 ？？？？？
+    width: 100% 
     height: 100%
     position: relative
     margin: auto
-    font-family: 微軟正黑體
-    letter-spacing: 1px
     border: solid 1px $border-color
     color: $darker-txt-color
 
 .container
+    transform: translate(0, 0)
     width: 100%
     height: 100%
     position: relative
 
-.logo-row
+.LogoRow-logo-row
     width: 100%
     border-bottom: solid 1px $border-color
     box-shadow: $shadow
-    position: absolute
+    position: fixed
     background-color: #fff
     z-index: 10
+    top: 0
+    .LogoRow-logo
+        text-align: center
+        height: 50px
+        line-height: 50px
+        font-size: 18px
+        font-weight: 600
 
-.logo
-    text-align: center
-    height: 50px
-    line-height: 50px
-    font-size: 18px
-    font-weight: 600
+// .fx
+//     display: flex
 
-.fx
-    display: flex
-
-.bottom-menu-row
+.BottomMenuRow-bottom-menu-row
     width: 100%
     height: 65px
     position: absolute
@@ -70,25 +75,28 @@ a
     border-top: solid 1px $border-color
     box-sizing: border-box
     padding: 10px 0
+    display: flex
 
-.bottom-menu-row .item
-    flex: 1
-    text-align: center
-    position: relative
-    font-size: 12px
-    color: $darker-txt-color
-    .color-red
+    .BottomMenuRow-item
+        flex: 1
+        text-align: center
+        position: relative
+        font-size: 12px
+        color: $darker-txt-color
+    .BottomMenuRow-current-page
         color: $main-color
-    .icon-block
+    .BottomMenuRow-icon-block
         position: absolute
         top: 50%
         left: 50%
         transform: translate(-50%, -50%)
         font-weight: 700
-    .item-txt
-        font-size: 12px
+    .BottomMenuRow-icon-style
+        font-size: 25px
+        width: 100%
+        padding-bottom: 5px
 
-.daily-tip
+.DailyTip-daily-tip
     text-align: left
     width: 70%
     margin: auto
@@ -99,47 +107,56 @@ a
     font-size: 16px
     font-weight: 300
     border-radius: 3px
-    .throw-question
+    .DailyTip-question
         font-size: 18px
         font-weight: 600
 
-.daily-greeting
+//////    DailyGreeting   //////        
+.DailyGreeting-daily-greeting
     width: 100%
     text-align: left
     margin-bottom: 20px
     padding: 0 16px
-    .name-call
+    .DailyGreeting-name-call
         font-size: 18px 
         font-weight: 600
-    .general-greeting
+    .DailyGreeting-general-greeting
         font-size: 16px
         font-weight: 300
 
-.search-block
+/////     SearchBlock     //////
+.SearchBlock-search-block
     margin: auto
     width: 100%
     position: relative
-    .input-block
+    .SearchBlock-input-block
         width: 100%
         position: relative
-    .item-search-input
+    .SearchBlock-item-search-input
         width: 100%
-        border: solid 1px $border-color
+        border: none
         height: 30px
         padding: 0 15px
         letter-spacing: 1px
         border-radius: 3px
         font-size: 16px
-    .log-in-tip
+    .SearchBlock-log-in-tip
         font-size: 10px
-        // position: absolute
         right: 0
         margin-top: 10px
         text-align: right
-    .input-row
+    .SearchBlock-input-row
         display: flex
         align-items: center
         box-shadow: $shadow
+        border: solid 1px $border-color
+        border-radius: 5px
+    .SearchBlock-search-icon
+        position: absolute
+        right: 10px
+        color: rgba(0,0,0,.2)
+        top: 50%
+        transform: translateY(-50%)
 
 .inside-container
     margin-top: 60px
@@ -147,32 +164,34 @@ a
     height: calc(100% - 125px)
     width: 100%
 
+/////     HomeHotItem //////
 .home-hot-item-row
     position: absolute
     bottom: 20px
     width: 100%
-    padding: 10px 0    
-    
-.home-hot-item
+    padding: 10px 0
+.HomeHotItem-home-hot-item
     height: 100%
-    width: 100%
+    width: 80%
+    margin: auto
     box-sizing: border-box
     overflow: scroll
-    .item-block
+    display: flex
+    .HomeHotItem-item-block
         margin: 0 15px
         border: solid 1px $border-color
         box-sizing: border-box
         border-radius: 10px
         box-shadow: $shadow
-        img 
-            width: 100px
-            height: 100px
-            border-bottom: solid 1px $border-color
-        .item-name
-            height: 30px
-            line-height: 30px
-            text-align: center
-            margin-top: -4px
+    .HomeHotItem-img 
+        width: 100px
+        height: 100px
+        border-bottom: solid 1px $border-color
+    .HomeHotItem-item-name
+        height: 30px
+        line-height: 30px
+        text-align: center
+        margin-top: -4px
 
 .greeting-search-block
     position: absolute
@@ -182,36 +201,44 @@ a
     width: 80%
 
 /////    ItemCategory.js    /////
-.item-category
+.ItemCategory-item-category
     height: 100%
     width: 100%
-    .item-block
+    .ItemCategory-item-block
         margin: 0 15px
         border: solid 1px $border-color
         box-sizing: border-box
-        border-radius: 10px
+        border-radius: 5px
         box-shadow: $shadow
-    .img-block
+    .ItemCategory-img-block
         width: 100%
         height: 180px
         position: relative
         border-bottom: solid 1px $border-color
-        img 
+        .ItemCategory-img 
             max-height: 180px
             max-width: 100%
             position: absolute
             top: 50%
             left: 50%
             transform: translate(-50%, -50%)
-    .item-name
-        text-align: center
-        padding: 8px 15px
+            border-radius: 5px 5px 0 0 
+    .ItemCategory-item-name-row
+        text-align: right
+        padding: 8px 20px
+        display: flex
+        justify-content: flex-end
+        align-items: center
+        .ItemCategory-item-name-icon
+            font-size: 10px
+            margin-left: 10px
 
 /////     AllCategory.js /////
-.category
+.all-category
     width: 100%
     height: $height
     overflow: scroll
+    transform:translate(0,0)
     .container
         margin: auto
         width: 80%
@@ -223,28 +250,32 @@ a
         width: 100%
         margin-top: 20px
     .category-block
-        margin-top: 20px
+        margin: 20px 0 30px 0
         display: flex
         justify-content: space-around
         flex-wrap: wrap
 
-.dry-food-page
+.DryFeed-dry-food-page
     width: 100%
     overflow: scroll
     height: $height
+    .DryFeed-container
+        margin-top: 50px
+        position: relative
+        z-index: 1
 
-.category-header-component
+.CategoryHeader-category-header-component
     width: 100%
     position: relative
-    .img-block
+    .CategoryHeader-img-block
         display: flex
         flex: 1
         padding: 20px 20px 0 20px
         box-sizing: border-box
-    .img
+    .CategoryHeader-img
         width: 50%
         flex: 8
-    .help-txt
+    .CategoryHeader-help-txt
         right: 20px
         font-size: 14px
         color: $main-text-color
@@ -259,40 +290,40 @@ a
     left: 25px
     font-size: 18px
 
-.item-filter
+.ItemFilter-item-filter
     display: flex
     justify-content: space-around
     flex: 1
     padding: 10px 15px
     border-bottom: solid 1px $border-color
-    .item
+    .ItemFilter-item
         text-align: center
         flex: 1
 
-.item-thumbnail-block
+.ItemThumbnail-item-thumbnail-block
     width: 100%
     display: flex
     flex-wrap: wrap
     justify-content: space-around
     margin: 20px 0 50px 0
-    .item-block
+    .ItemThumbnail-item-block
         width: 40%
         // height: 200px
         margin-bottom: 15px
         border: solid 1px $border-color
-    .img-block
+    .ItemThumbnail-img-block
         width: 100%
         height: 180px
         position: relative
         border-bottom: solid 1px $border-color
-    .img
+    .ItemThumbnail-img
         max-height: 180px
         max-width: 100%
         position: absolute
         top: 50%
         left: 50%
         transform: translate(-50%, -50%)
-    .item-name
+    .ItemThumbnail-item-name
         margin-top: -4px
         text-align: center
         height: 20px

@@ -1,19 +1,12 @@
-import React from 'react'
-
-// import { LeftOutlined } from '@ant-design/icons'
-
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+ import React from 'react'
 
 function CategoryHeader(props){
     return (
-        <div className='category-header-component'>
-            <div className='img-block'>
-                {/* <Link to='/CategorySelect' className='back-all-category'>
-                    <div><LeftOutlined /></div>
-                </Link>             */}
-                <img src={props.img} alt="" className='img'/>
+        <div className='CategoryHeader-category-header-component'>
+            <div className='CategoryHeader-img-block'>
+                <img src={props.img} alt="" className='CategoryHeader-img'/>
             </div>
-            <div className='help-txt'>找{props.helpTxt}?</div>
+            <div className='CategoryHeader-help-txt'>找{props.helpTxt}?</div>
         </div>
     )
 }

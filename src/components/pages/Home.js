@@ -12,13 +12,6 @@ import { useParams, useLocation } from "react-router";
 import LogoRow from "../LogoRow";
 
 let Home = () => {
-    // const { match } = props;
-    // let {num} = match.params;
-
-    let { num } = useParams();
-
-
-
     return (
         <div>
             <LogoRow />

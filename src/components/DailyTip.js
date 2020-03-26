@@ -1,11 +1,11 @@
 import React from 'react'
-import '../main.sass'
+// import '../main.sass'
 
 class DailyTip extends React.Component{
     render(){
-        return(
-            <div className='daily-tip'>
-                <div className='throw-question'>
+        return (
+            <div className='DailyTip-daily-tip'>
+                <div className='DailyTip-question'>
                     你知道嗎?
                 </div>
                 <div>

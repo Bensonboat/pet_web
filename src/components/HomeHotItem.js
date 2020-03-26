@@ -1,26 +1,23 @@
 import React, { useState }  from 'react'
 
 function HomeHotItem(){
-    let [hotItemData, setData] = useState('')
-    console.log(hotItemData, 'xxx')
-
     return (
-        <div className='home-hot-item fx'>
-            <div className='item-block'>
-                <img src='../logo192.png' alt=''/>
-                <div className='item-name'>test1</div>
+        <div className='HomeHotItem-home-hot-item fx'>
+            <div className='HomeHotItem-item-block'>
+                <img src='../img/logo192.png' alt='' className='HomeHotItem-img'/>
+                <div className='HomeHotItem-item-name'>test1</div>
             </div>
-            <div className='item-block'>
-                <img src='../RHUA-side-smile-xss.png' alt=''/>
-                <div className='item-name'>test2</div>
+            <div className='HomeHotItem-item-block'>
+                <img src='../img/RHUA-side-smile-xss.png' alt='' className='HomeHotItem-img'/>
+                <div className='HomeHotItem-item-name'>test2</div>
             </div>
-            <div className='item-block'>
-                <img src='../logo192.png' alt=''/>
-                <div className='item-name'>test3</div>
+            <div className='HomeHotItem-item-block'>
+                <img src='../img/logo192.png' alt='' className='HomeHotItem-img'/>
+                <div className='HomeHotItem-item-name'>test3</div>
             </div>
-            <div className='item-block'>
-                <img src='../logo192.png' alt=''/>
-                <div className='item-name'>test4</div>
+            <div className='HomeHotItem-item-block'>
+                <img src='../img/logo192.png' alt='' className='HomeHotItem-img'/>
+                <div className='HomeHotItem-item-name'>test4</div>
             </div>
         </div>
     )

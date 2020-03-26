@@ -16,51 +16,56 @@ function CategorySelect(){
 
     let data = [
         {
-            name: '1',
-            route: 'DryFeed'
+            name: '玩具',
+            route: 'Toy',
+            url: '../img/puppy.jpg'
         },
         {
-            name: '2',
-            route: 'Toy'
+            name: '汪汪飼料',
+            route: 'DryFeed',
+            url: '../img/logo192.png'
         },
         {
-            name: '3',
-            route: 'Toy'
+            name: '喵喵飼料',
+            route: 'Toy',
+            url: '../img/RHUA-side-smile-xss.png'
         },
         {
-            name: '4',
-            route: 'Toy'
+            name: '汪汪零食',
+            route: 'Toy',
+            url: '../img/demo-img.png'
         },
         {
-            name: '5',
-            route: 'Toy'
+            name: '喵喵零食',
+            route: 'Toy',
+            url: '../img/RHUA-side-smile-xss.png'
         },
         {
-            name: '6',
-            route: 'Toy'
+            name: '用品',
+            route: 'Toy',
+            url: '../img/puppy.jpg'
         },
         {
-            name: '7',
-            route: 'Toy'
+            name: '其他',
+            route: 'Toy',
+            url: '../img/puppy.jpg'
         }
     ]
 
     let arr = data.map((item, index) => {
         let data = <Link to={`/CategorySelect/${item.route}`} key={index} className='item'>
-                        <div>
-                            <ItemCategory name={item.name}/>
-                        </div>
+                        <ItemCategory name={item.name} url={item.url}/>
                     </Link>
         return data
     })
 
     return(
-        <div className='category'>
+        <div className='all-category'>
             <LogoRow style={{position: 'fixed'}}/>
             <div className='container'>
-                <div className='search-block' style={{width: '100%'}}>
+                {/* <div className='search-block' style={{width: '100%'}}> */}
                     <SearchBlock/>
-                </div>
+                {/* </div> */}
                 <div className='category-block'>
                     {arr}
                 </div>
